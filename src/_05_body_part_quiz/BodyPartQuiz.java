@@ -32,7 +32,7 @@ public class BodyPartQuiz {
 	public void run() {
 		initializeGui();
 		startQuiz();
-	}
+String firstImage = "src/05 body part quiz/arnold.jpeg";
 
 	private void initializeGui() {
 		initializeImageList();
