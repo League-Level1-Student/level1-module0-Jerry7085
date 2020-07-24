@@ -26,23 +26,23 @@ public class BodyPartQuiz {
 	String thirdImage = "src/_05_body_part_quiz/morgan.jpeg";
 	String fourthImage = "src/_05_body_part_quiz/jack.jpeg";
 
-	JFrame window = new JFrame();
-	JPanel panel = new JPanel();
+	JFrame f = new JFrame();
+	JPanel p = new JPanel();
 
 	public void run() {
 		initializeGui();
 		startQuiz();
 String firstImage = "src/05 body part quiz/arnold.jpeg";
-
+	}
 	private void initializeGui() {
 		initializeImageList();
 		imageIterator = imageList.iterator();
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.add(panel);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.add(p);
 
 		// 3. Change the size of the window so that you can only see part of the
 		// image.
-		window.setSize(500, 500);
+		f.setSize(500, 500);
 
 		showNextImage();
 
@@ -51,15 +51,15 @@ String firstImage = "src/05 body part quiz/arnold.jpeg";
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
-
+		int s = 0;
 		// 2. Set the size of the window in the initializeGui() method 
-
+		initializeGui();
 		// 4. Ask the user who this person is and store their answer
 		String guess = JOptionPane.showInputDialog("who is this?");
-
+		
 		// 5. Check their answer. If they guessed correctly:
 		// -- Tell them they are right and increase the score by 1
-
+		if(guess.equalsIgnoreCase("a guy"))
 		// 6. Otherwise:
 		// -- Tell them they are wrong and who the person is
 
@@ -73,9 +73,9 @@ String firstImage = "src/05 body part quiz/arnold.jpeg";
 	}
 
 	public void showNextImage() {
-		panel.removeAll();
-		panel.add(getNextImage());
-		window.setVisible(true);
+		p.removeAll();
+		p.add(getNextImage());
+		f.setVisible(true);
 	}
 
 	private JLabel loadImage(String fileName) {
